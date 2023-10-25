@@ -7,3 +7,5 @@ plotly
 #plotly requires pandas
 pandas
 
+python-dotenv
+
