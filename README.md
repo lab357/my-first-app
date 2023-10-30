@@ -23,9 +23,13 @@ Obtain an [API Key from Alphavantage](https://www.alphavantage.co/support/#api-k
 Create a ".env" file and paste in the following contents 
 ```sh
 #this is the .env file...
+Obtain an API key from Sendgrid: you must first follow the setup instructions to create an account, verify your account, setup a single sender, and obtain an API Key.
+
 
 ALPHAVANTAGE_API_KEY = "______"
 
+SENDGRID_API_KEY = getpass("Please input your Sendgrid API Key: ")
+SENDER_ADDRESS = getpass("Please input your Sender Email Address: ")
 
 ```
 
@@ -41,3 +45,10 @@ Run the unemployment report
 ```sh
 python app/unemployment.py
 ```
+
+send an email:
+
+```sh
+python app/email_service.py
+```
+
