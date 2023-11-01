@@ -41,6 +41,7 @@ def send_email(recipient_address=SENDER_ADDRESS, subject="[Shopping Cart App] Te
 
 
 
+user_address = input("Please enter your email address: ")
 
 my_content = """
 
@@ -60,4 +61,5 @@ my_content = """
         <li>Strawberry</li>
     </ul>
 """
-send_email(html_content=my_content)
+
+send_email(html_content=my_content, recipient_address=user_address)
