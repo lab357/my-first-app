@@ -1,13 +1,12 @@
+# IMPORTS AT THE TOP
 
-#IMPORTS AT THE TOP
-
-from getpass import getpass
 import os
-from dotenv import load_dotenv
-import requests
 import json
 from pprint import pprint
 from statistics import mean
+
+from dotenv import load_dotenv
+import requests
 from plotly.express import line
 
 from app.email_service import send_email
@@ -15,17 +14,21 @@ from app.email_service import send_email
 print("BACK IN UNEMPLOYMENT FILE")
 
 
-#ENVIRONMENT VARIABLES 
+# ENVIRONMENT VARIABLES AND CONSTANTS
 
-load_dotenv() #go look in the .env file for any env vars 
+load_dotenv() # go look in the .env file for any env vars
 
 API_KEY = os.getenv("ALPHAVANTAGE_API_KEY")
 
 #breakpoint()
 
+#quit()
 
+# FUNCTIONS
 
+# ...
 
+# WORKING CODE
 
 request_url = f"https://www.alphavantage.co/query?function=UNEMPLOYMENT&apikey={API_KEY}"
 
@@ -46,7 +49,11 @@ data = parsed_response["data"]
 print("-------------------------")
 print("LATEST UNEMPLOYMENT RATE:")
 #print(data[0])
-print(f"{data[0]['value']}%", "as of", data[0]["date"])
+
+latest_rate = data[0]['value']
+latest_date = data[0]["date"]
+
+print(f"{latest_rate}%", "as of", latest_date)
 
 
 # Challenge B
@@ -75,15 +82,13 @@ rates = [float(d["value"]) for d in data]
 fig = line(x=dates, y=rates, title="United States Unemployment Rate over time", labels= {"x": "Month", "y": "Unemployment Rate"})
 fig.show()
 
+# EMAIL SENDING
 
 
 
 user_address = input("Please enter your email address: ")
 
 
-
-latest_rate = data[0]['value']
-latest_date = data[0]["date"]
 
 content = f"""
 <h1> Unemployment Report Email </h1>
@@ -92,9 +97,6 @@ content = f"""
 """
 
 send_email(recipient_address=user_address, html_content=content, subject="Your Unemployment Report")
-
-
-
 
 
 
