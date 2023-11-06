@@ -25,3 +25,4 @@ if __name__ == "__main__":
     x = input("Please input a number ")
     result = enlarge(x)
     print(result)
+    
