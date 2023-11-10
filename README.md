@@ -19,6 +19,7 @@ pip install -r requirements.txt
 
 Obtain an [API Key from Alphavantage](https://www.alphavantage.co/support/#api-key) or from the prof (`ALPHAVANTAGE_API_KEY`).
 
+Follow the setup instructions to create an account, verify your account, setup a single sender, and obtain an API Key.
 
 Create a ".env" file and paste in the following contents 
 ```sh
@@ -28,8 +29,8 @@ Obtain an API key from Sendgrid: you must first follow the setup instructions to
 
 ALPHAVANTAGE_API_KEY = "______"
 
-SENDGRID_API_KEY = getpass("Please input your Sendgrid API Key: ")
-SENDER_ADDRESS = getpass("Please input your Sender Email Address: ")
+SENDGRID_API_KEY = "__________"
+SENDER_ADDRESS = "example.gmail.com"
 
 ```
 
@@ -51,6 +52,7 @@ send an email:
 ```sh
 python app/email_service.py
 ```
+
 
 #Testing
 
